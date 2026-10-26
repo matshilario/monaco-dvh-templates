@@ -1,0 +1,1111 @@
+# Templates de DVH Criteria gerados a partir de Timmerman R. "A Story of Hypofractionation and the Table
+# on the Wall", IJROBP 2022;112(1):4-21 (tabelas 8-2021), para 1, 2, 3, 4, 5, 8, 10, 15, 20 e 30 fracoes.
+# Doses em cGy. "Ponto" = 0,035 cc. Serial: D(volume)cc <= Volume max; D0.035cc <= Max point dose.
+# Pulmao: V(dose) <= 37% (pneumonite); a regra de volume critico (1500 cc) nao cabe num template fixo.
+# A dose do PTV (D95% >= Rx, tol 5%) e uma SUPOSICAO de prescricao tipica: ajuste conforme o caso.
+# Gerado por templates/timmerman/gerar_spec_timmerman.py. Para regerar os XML (na raiz do repositorio):
+#   python gerar_template.py templates/timmerman/timmerman2021.txt templates/timmerman
+template: TimmermanBrain1fr
+site: Brain
+description: Timmerman 2021 - 1 fracoes
+PTV_20Gy@1Fr  PD=2000
+  D95% >= 2000  tol 100
+GTV
+patient(Unsp.Tiss.)
+NOE
+  D0.2cc <= 800
+  D0.035cc <= 1000
+NOD
+  D0.2cc <= 800
+  D0.035cc <= 1000
+QUIASMA
+  D0.2cc <= 800
+  D0.035cc <= 1000
+COCLEA D
+  D0.035cc <= 900
+COCLEA E
+  D0.035cc <= 900
+TRONCO
+  D0.5cc <= 1000
+  D0.035cc <= 1500
+MEDULA
+  D0.35cc <= 1000
+  D0.035cc <= 1400
+CRISTALINO D
+CRISTALINO E
+OLHO D
+OLHO E
+
+template: TimmermanTorax1fr
+site: Thorax
+description: Timmerman 2021 - 1 fracoes
+PTV_34Gy@1Fr  PD=3400
+  D95% >= 3400  tol 170
+ITV
+patient(Unsp.Tiss.)
+MEDULA
+  D0.35cc <= 1000
+  D0.035cc <= 1400
+ESOFAGO
+  D5cc <= 2000
+  D0.035cc <= 2400
+PLEXO
+  D3cc <= 1360
+  D0.035cc <= 1640
+CORACAO
+  D15cc <= 1600
+  D0.035cc <= 2200
+VASOS
+  D10cc <= 3100
+  D0.035cc <= 3700
+TRAQUEIA
+  D4cc <= 2750
+  D0.035cc <= 3000
+BRONQUIOS
+  D0.5cc <= 1740
+  D0.035cc <= 2020
+COSTELAS
+  D5cc <= 2800
+  D0.035cc <= 3300
+pele
+  D10cc <= 2550
+  D0.035cc <= 2750
+ESTOMAGO
+  D5cc <= 1740
+  D0.035cc <= 2200
+PULMOES
+  V800 <= 37%
+PULMAO D
+PULMAO E
+
+template: TimmermanPelve1fr
+site: Pelvis
+description: Timmerman 2021 - 1 fracoes
+PTV_24Gy@1Fr  PD=2400
+  D95% >= 2400  tol 120
+CTV
+patient(Unsp.Tiss.)
+CAUDA EQUINA
+  D5cc <= 1400
+  D0.035cc <= 1600
+PLEXO SACRAL
+  D5cc <= 1440
+  D0.035cc <= 1600
+INTESTINO
+  D30cc <= 1760
+  D0.035cc <= 2000
+COLON
+  D20cc <= 2050
+  D0.035cc <= 3100
+Reto
+  D3.5cc <= 3000
+  D20cc <= 2300
+  D0.035cc <= 3370
+URETER
+  D0.035cc <= 3500
+Bexiga
+  D15cc <= 1200
+  D0.035cc <= 2500
+Bulbo
+  D3cc <= 1600
+Femur D
+  D10cc <= 1500
+Femur E
+  D10cc <= 1500
+
+template: TimmermanBrain2fr
+site: Brain
+description: Timmerman 2021 - 2 fracoes
+PTV_24Gy@2Fr  PD=2400
+  D95% >= 2400  tol 120
+GTV
+patient(Unsp.Tiss.)
+NOE
+  D0.2cc <= 1170
+  D0.035cc <= 1370
+NOD
+  D0.2cc <= 1170
+  D0.035cc <= 1370
+QUIASMA
+  D0.2cc <= 1170
+  D0.035cc <= 1370
+COCLEA D
+  D0.035cc <= 1170
+COCLEA E
+  D0.035cc <= 1170
+TRONCO
+  D0.5cc <= 1300
+  D0.035cc <= 1910
+MEDULA
+  D0.35cc <= 1300
+  D0.035cc <= 1830
+CRISTALINO D
+CRISTALINO E
+OLHO D
+OLHO E
+
+template: TimmermanTorax2fr
+site: Thorax
+description: Timmerman 2021 - 2 fracoes
+PTV_24Gy@2Fr  PD=2400
+  D95% >= 2400  tol 120
+ITV
+patient(Unsp.Tiss.)
+MEDULA
+  D0.35cc <= 1300
+  D0.035cc <= 1830
+ESOFAGO
+  D5cc <= 2430
+  D0.035cc <= 2830
+PLEXO
+  D3cc <= 1780
+  D0.035cc <= 2120
+CORACAO
+  D15cc <= 2000
+  D0.035cc <= 2600
+VASOS
+  D10cc <= 3500
+  D0.035cc <= 4100
+TRAQUEIA
+  D4cc <= 3450
+  D0.035cc <= 3800
+BRONQUIOS
+  D0.5cc <= 2160
+  D0.035cc <= 2510
+COSTELAS
+  D5cc <= 3400
+  D0.035cc <= 4150
+pele
+  D10cc <= 2830
+  D0.035cc <= 3030
+ESTOMAGO
+  D5cc <= 2000
+  D0.035cc <= 2600
+PULMOES
+  V1000 <= 37%
+PULMAO D
+PULMAO E
+
+template: TimmermanPelve2fr
+site: Pelvis
+description: Timmerman 2021 - 2 fracoes
+PTV_20Gy@2Fr  PD=2000
+  D95% >= 2000  tol 100
+CTV
+patient(Unsp.Tiss.)
+CAUDA EQUINA
+  D5cc <= 1800
+  D0.035cc <= 2080
+PLEXO SACRAL
+  D5cc <= 1850
+  D0.035cc <= 2080
+INTESTINO
+  D30cc <= 1920
+  D0.035cc <= 2400
+COLON
+  D20cc <= 2580
+  D0.035cc <= 3900
+Reto
+  D3.5cc <= 3800
+  D20cc <= 2670
+  D0.035cc <= 4130
+URETER
+  D0.035cc <= 3750
+Bexiga
+  D15cc <= 1450
+  D0.035cc <= 2900
+Bulbo
+  D3cc <= 2050
+Femur D
+  D10cc <= 1950
+Femur E
+  D10cc <= 1950
+
+template: TimmermanBrain3fr
+site: Brain
+description: Timmerman 2021 - 3 fracoes
+PTV_27Gy@3Fr  PD=2700
+  D95% >= 2700  tol 135
+GTV
+patient(Unsp.Tiss.)
+NOE
+  D0.2cc <= 1530
+  D0.035cc <= 1740
+NOD
+  D0.2cc <= 1530
+  D0.035cc <= 1740
+QUIASMA
+  D0.2cc <= 1530
+  D0.035cc <= 1740
+COCLEA D
+  D0.035cc <= 1440
+COCLEA E
+  D0.035cc <= 1440
+TRONCO
+  D0.5cc <= 1590
+  D0.035cc <= 2310
+MEDULA
+  D0.35cc <= 1590
+  D0.035cc <= 2250
+CRISTALINO D
+CRISTALINO E
+OLHO D
+OLHO E
+
+template: TimmermanTorax3fr
+site: Thorax
+description: Timmerman 2021 - 3 fracoes
+PTV_54Gy@3Fr  PD=5400
+  D95% >= 5400  tol 270
+ITV
+patient(Unsp.Tiss.)
+MEDULA
+  D0.35cc <= 1590
+  D0.035cc <= 2250
+ESOFAGO
+  D5cc <= 2790
+  D0.035cc <= 3240
+PLEXO
+  D3cc <= 2200
+  D0.035cc <= 2600
+CORACAO
+  D15cc <= 2400
+  D0.035cc <= 3000
+VASOS
+  D10cc <= 3900
+  D0.035cc <= 4500
+TRAQUEIA
+  D5cc <= 3900
+  D0.035cc <= 4300
+BRONQUIOS
+  D0.5cc <= 2580
+  D0.035cc <= 3000
+COSTELAS
+  D5cc <= 4000
+  D0.035cc <= 5000
+pele
+  D10cc <= 3100
+  D0.035cc <= 3300
+ESTOMAGO
+  D5cc <= 2250
+  D0.035cc <= 3000
+PULMOES
+  V1140 <= 37%
+PULMAO D
+PULMAO E
+
+template: TimmermanPelve3fr
+site: Pelvis
+description: Timmerman 2021 - 3 fracoes
+PTV_30Gy@3Fr  PD=3000
+  D95% >= 3000  tol 150
+CTV
+patient(Unsp.Tiss.)
+CAUDA EQUINA
+  D5cc <= 2190
+  D0.035cc <= 2550
+PLEXO SACRAL
+  D5cc <= 2250
+  D0.035cc <= 2550
+INTESTINO
+  D30cc <= 2070
+  D0.035cc <= 2850
+COLON
+  D20cc <= 2880
+  D0.035cc <= 4500
+Reto
+  D3.5cc <= 4300
+  D20cc <= 3030
+  D0.035cc <= 4700
+URETER
+  D0.035cc <= 4000
+Bexiga
+  D15cc <= 1700
+  D0.035cc <= 3300
+Bulbo
+  D3cc <= 2500
+Femur D
+  D10cc <= 2400
+Femur E
+  D10cc <= 2400
+
+template: TimmermanBrain4fr
+site: Brain
+description: Timmerman 2021 - 4 fracoes
+PTV_28Gy@4Fr  PD=2800
+  D95% >= 2800  tol 140
+GTV
+patient(Unsp.Tiss.)
+NOE
+  D0.2cc <= 1920
+  D0.035cc <= 2120
+NOD
+  D0.2cc <= 1920
+  D0.035cc <= 2120
+QUIASMA
+  D0.2cc <= 1920
+  D0.035cc <= 2120
+COCLEA D
+  D0.035cc <= 1800
+COCLEA E
+  D0.035cc <= 1800
+TRONCO
+  D0.5cc <= 2080
+  D0.035cc <= 2720
+MEDULA
+  D0.35cc <= 1800
+  D0.035cc <= 2560
+CRISTALINO D
+CRISTALINO E
+OLHO D
+OLHO E
+
+template: TimmermanTorax4fr
+site: Thorax
+description: Timmerman 2021 - 4 fracoes
+PTV_48Gy@4Fr  PD=4800
+  D95% >= 4800  tol 240
+ITV
+patient(Unsp.Tiss.)
+MEDULA
+  D0.35cc <= 1800
+  D0.035cc <= 2560
+ESOFAGO
+  D5cc <= 3040
+  D0.035cc <= 3560
+PLEXO
+  D3cc <= 2480
+  D0.035cc <= 2960
+CORACAO
+  D15cc <= 2800
+  D0.035cc <= 3400
+VASOS
+  D10cc <= 4300
+  D0.035cc <= 4900
+TRAQUEIA
+  D5cc <= 4240
+  D0.035cc <= 4700
+BRONQUIOS
+  D0.5cc <= 2880
+  D0.035cc <= 3480
+COSTELAS
+  D5cc <= 4300
+  D0.035cc <= 5400
+pele
+  D10cc <= 3360
+  D0.035cc <= 3600
+ESTOMAGO
+  D5cc <= 2500
+  D0.035cc <= 3320
+PULMOES
+  V1280 <= 37%
+PULMAO D
+PULMAO E
+
+template: TimmermanPelve4fr
+site: Pelvis
+description: Timmerman 2021 - 4 fracoes
+PTV_28Gy@4Fr  PD=2800
+  D95% >= 2800  tol 140
+CTV
+patient(Unsp.Tiss.)
+CAUDA EQUINA
+  D5cc <= 2600
+  D0.035cc <= 2880
+PLEXO SACRAL
+  D5cc <= 2600
+  D0.035cc <= 2880
+INTESTINO
+  D30cc <= 2240
+  D0.035cc <= 3160
+COLON
+  D20cc <= 3080
+  D0.035cc <= 4850
+Reto
+  D3.5cc <= 4720
+  D20cc <= 3400
+  D0.035cc <= 5160
+URETER
+  D0.035cc <= 4300
+Bexiga
+  D15cc <= 1850
+  D0.035cc <= 3560
+Bulbo
+  D3cc <= 2700
+Femur D
+  D10cc <= 2700
+Femur E
+  D10cc <= 2700
+
+template: TimmermanBrain5fr
+site: Brain
+description: Timmerman 2021 - 5 fracoes
+PTV_30Gy@5Fr  PD=3000
+  D95% >= 3000  tol 150
+GTV
+patient(Unsp.Tiss.)
+NOE
+  D0.2cc <= 2300
+  D0.035cc <= 2500
+NOD
+  D0.2cc <= 2300
+  D0.035cc <= 2500
+QUIASMA
+  D0.2cc <= 2300
+  D0.035cc <= 2500
+COCLEA D
+  D0.035cc <= 2200
+COCLEA E
+  D0.035cc <= 2200
+TRONCO
+  D0.5cc <= 2300
+  D0.035cc <= 3100
+MEDULA
+  D0.35cc <= 2200
+  D0.035cc <= 2800
+CRISTALINO D
+CRISTALINO E
+OLHO D
+OLHO E
+
+template: TimmermanTorax5fr
+site: Thorax
+description: Timmerman 2021 - 5 fracoes
+PTV_50Gy@5Fr  PD=5000
+  D95% >= 5000  tol 250
+ITV
+patient(Unsp.Tiss.)
+MEDULA
+  D0.35cc <= 2200
+  D0.035cc <= 2800
+ESOFAGO
+  D5cc <= 3250
+  D0.035cc <= 3800
+PLEXO
+  D3cc <= 2700
+  D0.035cc <= 3250
+CORACAO
+  D15cc <= 3200
+  D0.035cc <= 3800
+VASOS
+  D10cc <= 4700
+  D0.035cc <= 5300
+TRAQUEIA
+  D5cc <= 4500
+  D0.035cc <= 5000
+BRONQUIOS
+  D0.5cc <= 3200
+  D0.035cc <= 4000
+COSTELAS
+  D5cc <= 4500
+  D0.035cc <= 5700
+pele
+  D10cc <= 3650
+  D0.035cc <= 3850
+ESTOMAGO
+  D5cc <= 2650
+  D0.035cc <= 3500
+PULMOES
+  V1350 <= 37%
+PULMAO D
+PULMAO E
+
+template: TimmermanPelve5fr
+site: Pelvis
+description: Timmerman 2021 - 5 fracoes
+PTV_35Gy@5Fr  PD=3500
+  D95% >= 3500  tol 175
+CTV
+patient(Unsp.Tiss.)
+CAUDA EQUINA
+  D5cc <= 3000
+  D0.035cc <= 3150
+PLEXO SACRAL
+  D5cc <= 3000
+  D0.035cc <= 3200
+INTESTINO
+  D30cc <= 2400
+  D0.035cc <= 3450
+COLON
+  D20cc <= 3250
+  D0.035cc <= 5250
+Reto
+  D3.5cc <= 5000
+  D20cc <= 3750
+  D0.035cc <= 5500
+URETER
+  D0.035cc <= 4500
+Bexiga
+  D15cc <= 2000
+  D0.035cc <= 3800
+Bulbo
+  D3cc <= 3000
+Femur D
+  D10cc <= 3000
+Femur E
+  D10cc <= 3000
+
+template: TimmermanBrain8fr
+site: Brain
+description: Timmerman 2021 - 8 fracoes
+PTV_32Gy@8Fr  PD=3200
+  D95% >= 3200  tol 160
+GTV
+patient(Unsp.Tiss.)
+NOE
+  D0.2cc <= 2720
+  D0.035cc <= 2960
+NOD
+  D0.2cc <= 2720
+  D0.035cc <= 2960
+QUIASMA
+  D0.2cc <= 2720
+  D0.035cc <= 2960
+COCLEA D
+  D0.035cc <= 2640
+COCLEA E
+  D0.035cc <= 2640
+TRONCO
+  D0.5cc <= 2720
+  D0.035cc <= 3760
+MEDULA
+  D0.35cc <= 2640
+  D0.035cc <= 3360
+CRISTALINO D
+CRISTALINO E
+OLHO D
+OLHO E
+
+template: TimmermanTorax8fr
+site: Thorax
+description: Timmerman 2021 - 8 fracoes
+PTV_60Gy@8Fr  PD=6000
+  D95% >= 6000  tol 300
+ITV
+patient(Unsp.Tiss.)
+MEDULA
+  D0.35cc <= 2640
+  D0.035cc <= 3360
+ESOFAGO
+  D5cc <= 3680
+  D0.035cc <= 4320
+PLEXO
+  D3cc <= 3280
+  D0.035cc <= 3920
+CORACAO
+  D15cc <= 3440
+  D0.035cc <= 4000
+VASOS
+  D10cc <= 5520
+  D0.035cc <= 6200
+TRAQUEIA
+  D5cc <= 5000
+  D0.035cc <= 5600
+BRONQUIOS
+  D0.5cc <= 3840
+  D0.035cc <= 4880
+COSTELAS
+  D5cc <= 5000
+  D0.035cc <= 6300
+pele
+  D10cc <= 4320
+  D0.035cc <= 4560
+ESTOMAGO
+  D5cc <= 3120
+  D0.035cc <= 4200
+PULMOES
+  V1520 <= 37%
+PULMAO D
+PULMAO E
+
+template: TimmermanPelve8fr
+site: Pelvis
+description: Timmerman 2021 - 8 fracoes
+PTV_40Gy@8Fr  PD=4000
+  D95% >= 4000  tol 200
+CTV
+patient(Unsp.Tiss.)
+CAUDA EQUINA
+  D5cc <= 3400
+  D0.035cc <= 3840
+PLEXO SACRAL
+  D5cc <= 3400
+  D0.035cc <= 3840
+INTESTINO
+  D30cc <= 2880
+  D0.035cc <= 4000
+COLON
+  D20cc <= 3520
+  D0.035cc <= 5750
+Reto
+  D3.5cc <= 5600
+  D20cc <= 4500
+  D0.035cc <= 6150
+URETER
+  D0.035cc <= 5300
+Bexiga
+  D15cc <= 2240
+  D0.035cc <= 4480
+Bulbo
+  D3cc <= 3500
+Femur D
+  D10cc <= 3500
+Femur E
+  D10cc <= 3500
+
+template: TimmermanBrain10fr
+site: Brain
+description: Timmerman 2021 - 10 fracoes
+PTV_30Gy@10Fr  PD=3000
+  D95% >= 3000  tol 150
+GTV
+patient(Unsp.Tiss.)
+NOE
+  D0.5cc <= 3060
+  D0.035cc <= 3310
+NOD
+  D0.5cc <= 3060
+  D0.035cc <= 3310
+QUIASMA
+  D0.5cc <= 3060
+  D0.035cc <= 3310
+COCLEA D
+  D0.5cc <= 2500
+  D0.035cc <= 2700
+COCLEA E
+  D0.5cc <= 2500
+  D0.035cc <= 2700
+TRONCO
+  D5cc <= 3200
+  D0.035cc <= 3800
+MEDULA
+  D5cc <= 3100
+  D0.035cc <= 3600
+OLHO D
+  Dmean <= 2600
+  D0.035cc <= 3000
+OLHO E
+  Dmean <= 2600
+  D0.035cc <= 3000
+CRISTALINO D
+  D0.035cc <= 700
+CRISTALINO E
+  D0.035cc <= 700
+
+template: TimmermanTorax10fr
+site: Thorax
+description: Timmerman 2021 - 10 fracoes
+PTV_50Gy@10Fr  PD=5000
+  D95% >= 5000  tol 250
+ITV
+patient(Unsp.Tiss.)
+MEDULA
+  D5cc <= 3100
+  D0.035cc <= 3600
+ESOFAGO
+  D5cc <= 4000
+  D0.035cc <= 4800
+PLEXO
+  D3cc <= 3700
+  D0.035cc <= 4300
+CORACAO
+  D15cc <= 3660
+  D0.035cc <= 4250
+VASOS
+  D10cc <= 5570
+  D0.035cc <= 6290
+TRAQUEIA
+  D5cc <= 5200
+  D0.035cc <= 5900
+pele
+  D10cc <= 4630
+  D0.035cc <= 4890
+ESTOMAGO
+  D50cc <= 3390
+  D0.035cc <= 4500
+PULMOES
+  V1600 <= 37%
+PULMAO D
+PULMAO E
+
+template: TimmermanPelve10fr
+site: Pelvis
+description: Timmerman 2021 - 10 fracoes
+PTV_30Gy@10Fr  PD=3000
+  D95% >= 3000  tol 150
+CTV
+patient(Unsp.Tiss.)
+CAUDA EQUINA
+  D5cc <= 3500
+  D0.035cc <= 4100
+PLEXO SACRAL
+  D5cc <= 3500
+  D0.035cc <= 4100
+INTESTINO
+  D120cc <= 3390
+  D0.035cc <= 4100
+COLON
+  D20cc <= 4700
+  D0.035cc <= 6000
+Reto
+  D10cc <= 5200
+  D20cc <= 4900
+  D30cc <= 4600
+  D40cc <= 4300
+  D0.035cc <= 6500
+Bexiga
+  D90cc <= 4800
+  D125cc <= 4500
+  D0.035cc <= 5300
+Bulbo
+  D3cc <= 3800
+  D0.035cc <= 4400
+Femur D
+  D10cc <= 3800
+  D0.035cc <= 4350
+Femur E
+  D10cc <= 3800
+  D0.035cc <= 4350
+
+template: TimmermanBrain15fr
+site: Brain
+description: Timmerman 2021 - 15 fracoes
+PTV_37.5Gy@15Fr  PD=3750
+  D95% >= 3750  tol 188
+GTV
+patient(Unsp.Tiss.)
+NOE
+  D0.5cc <= 3900
+  D0.035cc <= 4200
+NOD
+  D0.5cc <= 3900
+  D0.035cc <= 4200
+QUIASMA
+  D0.5cc <= 3900
+  D0.035cc <= 4200
+COCLEA D
+  D0.5cc <= 3000
+  D0.035cc <= 3300
+COCLEA E
+  D0.5cc <= 3000
+  D0.035cc <= 3300
+TRONCO
+  D5cc <= 4000
+  D0.035cc <= 4400
+MEDULA
+  D5cc <= 3900
+  D0.035cc <= 4200
+OLHO D
+  Dmean <= 3300
+  D0.035cc <= 3750
+OLHO E
+  Dmean <= 3300
+  D0.035cc <= 3750
+CRISTALINO D
+  D0.035cc <= 900
+CRISTALINO E
+  D0.035cc <= 900
+
+template: TimmermanTorax15fr
+site: Thorax
+description: Timmerman 2021 - 15 fracoes
+PTV_45Gy@15Fr  PD=4500
+  D95% >= 4500  tol 225
+ITV
+patient(Unsp.Tiss.)
+MEDULA
+  D5cc <= 3900
+  D0.035cc <= 4200
+ESOFAGO
+  D5cc <= 4500
+  D0.035cc <= 5400
+PLEXO
+  D3cc <= 4800
+  D0.035cc <= 5250
+CORACAO
+  D15cc <= 4200
+  D0.035cc <= 4890
+VASOS
+  D10cc <= 5700
+  D0.035cc <= 6500
+TRAQUEIA
+  D5cc <= 5550
+  D0.035cc <= 6300
+pele
+  D10cc <= 5400
+  D0.035cc <= 5700
+ESTOMAGO
+  D50cc <= 3900
+  D0.035cc <= 5100
+PULMOES
+  V1800 <= 37%
+PULMAO D
+PULMAO E
+
+template: TimmermanPelve15fr
+site: Pelvis
+description: Timmerman 2021 - 15 fracoes
+PTV_37.5Gy@15Fr  PD=3750
+  D95% >= 3750  tol 188
+CTV
+patient(Unsp.Tiss.)
+CAUDA EQUINA
+  D5cc <= 4050
+  D0.035cc <= 4800
+PLEXO SACRAL
+  D5cc <= 4050
+  D0.035cc <= 4800
+INTESTINO
+  D120cc <= 3900
+  D0.035cc <= 4650
+COLON
+  D20cc <= 4700
+  D0.035cc <= 6450
+Reto
+  D10cc <= 6000
+  D20cc <= 5700
+  D30cc <= 5250
+  D40cc <= 4950
+  D0.035cc <= 7050
+Bexiga
+  D90cc <= 5550
+  D125cc <= 5250
+  D0.035cc <= 6150
+Bulbo
+  D3cc <= 4200
+  D0.035cc <= 4800
+Femur D
+  D10cc <= 4000
+  D0.035cc <= 4650
+Femur E
+  D10cc <= 4000
+  D0.035cc <= 4650
+
+template: TimmermanBrain20fr
+site: Brain
+description: Timmerman 2021 - 20 fracoes
+PTV_40Gy@20Fr  PD=4000
+  D95% >= 4000  tol 200
+GTV
+patient(Unsp.Tiss.)
+NOE
+  D0.5cc <= 4200
+  D0.035cc <= 4800
+NOD
+  D0.5cc <= 4200
+  D0.035cc <= 4800
+QUIASMA
+  D0.5cc <= 4200
+  D0.035cc <= 4800
+COCLEA D
+  D0.5cc <= 3200
+  D0.035cc <= 3600
+COCLEA E
+  D0.5cc <= 3200
+  D0.035cc <= 3600
+TRONCO
+  D5cc <= 4400
+  D0.035cc <= 5000
+MEDULA
+  D5cc <= 4200
+  D0.035cc <= 4600
+OLHO D
+  Dmean <= 3600
+  D0.035cc <= 4200
+OLHO E
+  Dmean <= 3600
+  D0.035cc <= 4200
+CRISTALINO D
+  D0.035cc <= 1000
+CRISTALINO E
+  D0.035cc <= 1000
+
+template: TimmermanTorax20fr
+site: Thorax
+description: Timmerman 2021 - 20 fracoes
+PTV_55Gy@20Fr  PD=5500
+  D95% >= 5500  tol 275
+ITV
+patient(Unsp.Tiss.)
+MEDULA
+  D5cc <= 4200
+  D0.035cc <= 4600
+ESOFAGO
+  D5cc <= 4800
+  D0.035cc <= 5800
+PLEXO
+  D3cc <= 5400
+  D0.035cc <= 5800
+CORACAO
+  D15cc <= 4600
+  D0.035cc <= 5200
+VASOS
+  D10cc <= 6000
+  D0.035cc <= 7000
+TRAQUEIA
+  D5cc <= 5800
+  D0.035cc <= 6600
+pele
+  D10cc <= 6000
+  D0.035cc <= 6400
+ESTOMAGO
+  D50cc <= 4200
+  D0.035cc <= 5400
+PULMOES
+  V1900 <= 37%
+PULMAO D
+PULMAO E
+
+template: TimmermanPelve20fr
+site: Pelvis
+description: Timmerman 2021 - 20 fracoes
+PTV_60Gy@20Fr  PD=6000
+  D95% >= 6000  tol 300
+CTV
+patient(Unsp.Tiss.)
+CAUDA EQUINA
+  D5cc <= 4400
+  D0.035cc <= 5200
+PLEXO SACRAL
+  D5cc <= 4400
+  D0.035cc <= 5200
+INTESTINO
+  D120cc <= 4200
+  D0.035cc <= 5000
+COLON
+  D20cc <= 5000
+  D0.035cc <= 6600
+Reto
+  D10cc <= 6600
+  D20cc <= 6200
+  D30cc <= 5800
+  D40cc <= 5400
+  D0.035cc <= 7400
+Bexiga
+  D90cc <= 6000
+  D125cc <= 5600
+  D0.035cc <= 6600
+Bulbo
+  D3cc <= 4400
+  D0.035cc <= 5200
+Femur D
+  D10cc <= 4400
+  D0.035cc <= 5000
+Femur E
+  D10cc <= 4400
+  D0.035cc <= 5000
+
+template: TimmermanBrain30fr
+site: Brain
+description: Timmerman 2021 - 30 fracoes
+PTV_60Gy@30Fr  PD=6000
+  D95% >= 6000  tol 300
+GTV
+patient(Unsp.Tiss.)
+NOE
+  D0.5cc <= 4400
+  D0.035cc <= 5200
+NOD
+  D0.5cc <= 4400
+  D0.035cc <= 5200
+QUIASMA
+  D0.5cc <= 4400
+  D0.035cc <= 5200
+COCLEA D
+  D0.5cc <= 3600
+  D0.035cc <= 4000
+COCLEA E
+  D0.5cc <= 3600
+  D0.035cc <= 4000
+TRONCO
+  D5cc <= 5200
+  D0.035cc <= 6000
+MEDULA
+  D5cc <= 4740
+  D0.035cc <= 5280
+OLHO D
+  Dmean <= 3800
+  D0.035cc <= 4500
+OLHO E
+  Dmean <= 3800
+  D0.035cc <= 4500
+CRISTALINO D
+  D0.035cc <= 1000
+CRISTALINO E
+  D0.035cc <= 1000
+
+template: TimmermanTorax30fr
+site: Thorax
+description: Timmerman 2021 - 30 fracoes
+PTV_60Gy@30Fr  PD=6000
+  D95% >= 6000  tol 300
+ITV
+patient(Unsp.Tiss.)
+MEDULA
+  D5cc <= 4740
+  D0.035cc <= 5280
+ESOFAGO
+  D5cc <= 5100
+  D0.035cc <= 6000
+PLEXO
+  D3cc <= 6200
+  D0.035cc <= 6600
+CORACAO
+  D15cc <= 6000
+  D0.035cc <= 6800
+  V4000 <= 20%
+VASOS
+  D10cc <= 6000
+  D0.035cc <= 7600
+TRAQUEIA
+  D5cc <= 6000
+  D0.035cc <= 6900
+pele
+  D10cc <= 7000
+  D0.035cc <= 7600
+ESTOMAGO
+  D50cc <= 4500
+  D0.035cc <= 6000
+PULMOES
+  V2000 <= 37%
+PULMAO D
+PULMAO E
+
+template: TimmermanPelve30fr
+site: Pelvis
+description: Timmerman 2021 - 30 fracoes
+PTV_60Gy@30Fr  PD=6000
+  D95% >= 6000  tol 300
+CTV
+patient(Unsp.Tiss.)
+CAUDA EQUINA
+  D5cc <= 5000
+  D0.035cc <= 6000
+PLEXO SACRAL
+  D5cc <= 5000
+  D0.035cc <= 6000
+INTESTINO
+  D120cc <= 4500
+  D0.035cc <= 5400
+COLON
+  D20cc <= 5400
+  D0.035cc <= 7000
+Reto
+  D10cc <= 7500
+  D20cc <= 7000
+  D30cc <= 6500
+  D40cc <= 6000
+  D0.035cc <= 7900
+Bexiga
+  D90cc <= 7000
+  D150cc <= 6500
+  D0.035cc <= 7900
+Bulbo
+  D3cc <= 4800
+  D0.035cc <= 5600
+Femur D
+  D10cc <= 4800
+  D0.035cc <= 5600
+Femur E
+  D10cc <= 4800
+  D0.035cc <= 5600

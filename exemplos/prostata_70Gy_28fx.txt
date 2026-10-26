@@ -1,0 +1,37 @@
+# Exemplo: prostata 70 Gy em 28 fracoes (250 cGy/fr) com PTV de 56 Gy integrado.
+# Doses em cGy. Linhas que comecam na coluna 0 sao estruturas; linhas indentadas sao metas.
+# Estruturas sem metas entram no template desabilitadas (so para aparecer na lista).
+# Gerar:  python gerar_template.py exemplos/prostata_70Gy_28fx.txt exemplos
+template: PTTA_70Gy_56Gy_28fx
+site: All
+PTV_70Gy@28Fr  PD=7000
+  D95% >= 7000  tol 350
+  D0.027cc <= 7700  tol 350
+PTV_56Gy@28Fr  PD=5600
+  D95% >= 5600  tol 280
+Reto
+  Dmax <= 8200
+  V7000 <= 15%
+  V6500 <= 25%
+  V6000 <= 40%
+  V5000 <= 45%  tol 5
+  V4700 <= 47%
+  V4000 <= 60%
+  V3200 <= 80%
+Bexiga
+  Dmax <= 8300
+  V3500 <= 80%
+  V4000 <= 60%  tol 5
+  V5000 <= 45%
+  V6000 <= 30%
+  V6500 <= 25%
+  V7500 <= 10%
+  V7000 <= 15%  tol 5
+Bulbo
+CTV_1
+CTV_2
+Femur D
+Femur E
+Rim_D
+Rim_E
+patient(Unsp.Tiss.)
