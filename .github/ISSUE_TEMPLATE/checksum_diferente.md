@@ -3,7 +3,7 @@ name: Checksum não bate no meu Monaco
 about: O monaco_checksum.py deu DIFERENTE em templates criados pelo seu próprio Monaco
 ---
 
-**Versão do Monaco:** (ex.: 6.1.3)
+**Versão do Monaco:** (a fórmula foi validada na 6.1.3)
 
 **Saída de `python monaco_checksum.py` nos seus templates:**
 ```

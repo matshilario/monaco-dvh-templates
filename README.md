@@ -3,13 +3,15 @@
 [![tests](https://github.com/matshilario/monaco-dvh-templates/actions/workflows/tests.yml/badge.svg)](https://github.com/matshilario/monaco-dvh-templates/actions/workflows/tests.yml)
 ![python](https://img.shields.io/badge/python-3.8%2B-blue)
 ![license](https://img.shields.io/badge/license-MIT-green)
+![monaco](https://img.shields.io/badge/validado%20no-Monaco%206.1.3-orange)
 
 Gere templates de **DVH Criteria** do TPS Elekta Monaco a partir de um arquivo de texto simples,
 sem passar pela interface gráfica. Inclui 30 templates prontos baseados nas tabelas de
 Timmerman (2021) para 1 a 30 frações.
 
-> **Aviso.** O formato do XML e o checksum foram obtidos por engenharia reversa, sem qualquer
-> relação com a Elekta. Um template com checksum errado simplesmente não aparece na lista do
+> **Aviso.** O formato do XML e o checksum foram obtidos por engenharia reversa no **Monaco 6.1.3**,
+> sem qualquer relação com a Elekta. Outras versões podem gravar o checksum de outra forma
+> (veja [como conferir](#conferir-ou-corrigir-o-checksum-de-um-xml)). Um template com checksum errado simplesmente não aparece na lista do
 > Monaco; um template com checksum certo e **valores errados aparece e pode ser usado**.
 > Confira cada template na tela do Monaco antes de qualquer uso clínico. Use por sua conta e risco.
 
@@ -130,11 +132,19 @@ o Monaco. Também serve para checar se a fórmula vale no seu Monaco: rode nos t
 próprio Monaco criou. Se algum der `DIFERENTE`, a sua versão grava o checksum de outro jeito e a
 ferramenta não vai funcionar aí (abra uma issue informando a versão).
 
+Versões em que a fórmula foi confirmada:
+
+| Monaco | Resultado | Fonte |
+|---|---|---|
+| 6.1.3 | 63/63 templates batem; templates gerados aparecem na lista | autor, out/2026 |
+
+Se funcionou na sua versão, abra uma issue para entrar nesta tabela.
+
 ## Como o checksum funciona
 
 Resumo em [`docs/FORMATO_XML.md`](docs/FORMATO_XML.md). A fórmula fechou em 63 de 63 arquivos
 (50 templates antigos do serviço mais 13 testes controlados criados no Monaco) e foi validada no
-Monaco em outubro de 2026 copiando templates gerados e um controle negativo com checksum errado.
+**Monaco 6.1.3** em outubro de 2026 copiando templates gerados e um controle negativo com checksum errado.
 
 ## Testes
 
@@ -154,7 +164,7 @@ e relatos de versões do Monaco em que o checksum não bate.
 
 Generate Elekta Monaco **DVH Criteria templates** from a plain-text spec instead of clicking through the
 GUI. Monaco only lists templates whose `<Checksum>` matches; the formula was reverse-engineered
-(63/63 files, validated on Monaco in October 2026) and is documented in
+(63/63 files, validated on **Monaco 6.1.3** in October 2026; other versions untested) and is documented in
 [`docs/FORMATO_XML.md`](docs/FORMATO_XML.md). Ships with 30 ready-made templates from Timmerman's 2021
 hypofractionation tables (1 to 30 fractions, brain / thorax / pelvis), using our department's
 Portuguese structure names; edit `templates/timmerman/timmerman2021.txt` and regenerate to adapt.

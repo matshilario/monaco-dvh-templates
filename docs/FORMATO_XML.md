@@ -1,5 +1,7 @@
 # Formato do template e checksum
 
+Tudo abaixo foi observado no **Monaco 6.1.3**. Outras versões não foram testadas.
+
 ## XML
 
 Um template é um arquivo `NomeDoTemplate.xml` (UTF-8, fim de linha CRLF) na pasta
@@ -72,4 +74,4 @@ checksum = 3320
 Como foi descoberta: 50 templates antigos do serviço mais 13 testes controlados criados no Monaco
 mudando um fator por vez (dose, meta extra, description, site, Enabled, maiúsculas no nome).
 A fórmula fecha nos 63. Validação final: dois templates gerados apareceram no Monaco e um controle
-negativo com checksum errado não apareceu (outubro de 2026).
+negativo com checksum errado não apareceu (Monaco 6.1.3, outubro de 2026).
