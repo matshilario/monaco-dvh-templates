@@ -5,7 +5,7 @@ Tudo abaixo foi observado no **Monaco 6.1.3**. Outras versões não foram testad
 ## XML
 
 Um template é um arquivo `NomeDoTemplate.xml` (UTF-8, fim de linha CRLF) na pasta
-`MonacoDvhCriteriaTemplates`:
+`MonacoDvhCriteriaTemplates` que o Monaco lê. O Monaco carrega a lista ao abrir o DVH Criteria:
 
 ```xml
 <?xml version="1.0"?>

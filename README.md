@@ -30,8 +30,9 @@ Timmerman (2021) para 1 a 30 frações.
 ## Requisitos
 
 - Python 3.8 ou superior. Nenhuma biblioteca extra.
-- Acesso à pasta de templates do seu Monaco (`MonacoDvhCriteriaTemplates`). No nosso serviço ela
-  fica num compartilhamento de rede; o caminho muda de instalação para instalação.
+- Permissão para gravar na pasta de onde o seu Monaco lê os templates de DVH Criteria
+  (`MonacoDvhCriteriaTemplates`, na estação do Monaco). O caminho exato varia por instalação;
+  confirme com quem administra o sistema.
 
 ## Uso rápido
 
@@ -42,7 +43,8 @@ python gerar_template.py exemplos/prostata_70Gy_28fx.txt saida
 ```
 
 Sai um `.xml` por template em `saida/`, com o checksum já calculado. Copie o arquivo para a pasta
-`MonacoDvhCriteriaTemplates` do seu Monaco, abra o DVH Criteria e confira se ele aparece na lista.
+`MonacoDvhCriteriaTemplates` que o seu Monaco lê, abra o DVH Criteria e confira se ele aparece na
+lista. O gerador não grava nada nessa pasta: a cópia é manual, de propósito.
 
 Os templates Timmerman já gerados estão em [`templates/timmerman/`](templates/timmerman) e podem
 ser copiados direto, mas leia a seção sobre eles antes.
